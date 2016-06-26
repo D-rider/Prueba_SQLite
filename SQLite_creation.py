@@ -21,8 +21,6 @@ ALICANTE = [(0,'Alicante',38.3254,-0.4831)]
 con.executemany('insert into LOCALIDADES(ID,CIUDAD, LATITUD, LONGITUD) \
     values (?,?,?,?)', ALICANTE)
 
-con.commit()
-
 con.execute('''create table RADIACION(
     ID          INT     PRIMARY KEY     NOT NULL,
     CIUDAD_ID   INT     NOT NULL,
@@ -30,4 +28,6 @@ con.execute('''create table RADIACION(
     DIA         INT     NOT NULL,
     HORA         INT     NOT NULL,
     GLOBAL_RADIATON  REAL)''')
+    
+con.commit()
     
